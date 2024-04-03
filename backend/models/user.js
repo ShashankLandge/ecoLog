@@ -22,6 +22,18 @@ const userSchema = new mongoose.Schema({
       ref: "Waste",
     },
   ],
+  eWaste: {
+    type: Number,
+    default: 0,
+  },
+  dryWaste: {
+    type: Number,
+    default: 0,
+  },
+  wetWaste: {
+    type: Number,
+    default: 0,
+  },
 });
 
 // Create a model from the schema

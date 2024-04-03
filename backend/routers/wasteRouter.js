@@ -34,6 +34,16 @@ wasteRouter.post("/input", authMiddleware, async (req, res) => {
     // Save the user document to persist the changes
     await user.save();
 
+    if (type == "ewaste") {
+      user.eWaste += volume;
+    } else if (type == "drywaste") {
+      user.dryWaste += volume;
+    } else {
+      user.wetWaste += volume;
+    }
+
+    await user.save();
+
     // Sending response with the created waste document
     res.status(200).json(newWaste);
   } catch (error) {
@@ -41,6 +51,35 @@ wasteRouter.post("/input", authMiddleware, async (req, res) => {
     console.error("Error creating waste:", error);
     res.status(500).json({ error: "Internal server error" });
   }
+});
+
+wasteRouter.get("/lastMonth", authMiddleware, async (req, res) => {
+  const userId = req.userId; // Assuming this is the user's ID
+
+  const currentDate = new Date();
+  const lastMonthDate = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth() - 1,
+    currentDate.getDate()
+  );
+
+  userModel.User.findOne({ _id: userId })
+    .populate({
+      path: "waste",
+      match: { date: { $gte: lastMonthDate } },
+    })
+    .exec()
+    .then((user) => {
+      if (!user) {
+        console.log("User not found");
+        return;
+      }
+      //   console.log("User's waste collected in the last month:", user.waste);
+      res.json(user.waste);
+    })
+    .catch((err) => {
+      console.error("Error:", err);
+    });
 });
 
 module.exports = wasteRouter;
