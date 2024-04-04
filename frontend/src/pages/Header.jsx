@@ -1,15 +1,31 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect, useRef } from 'react';
 export function Header() {
 
-  
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-    
+
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        closeDropdown();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
   return (
     <header className="shadow sticky z-50 top-0">
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
@@ -104,7 +120,7 @@ export function Header() {
                                     <div className="relative inline-block text-left  ">
                                       <button
                                         type="button"
-                                        className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700    shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
+                                        className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700    shadow-sm hover:bg-gray-50 "
                                         id="menu-button"
                                         aria-expanded="true"
                                         aria-haspopup="true"
@@ -140,6 +156,8 @@ export function Header() {
                                   </nav>
 
                 </li>
+
+                
                            
             </ul>
           </div>
