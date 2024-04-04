@@ -4,6 +4,7 @@ const express = require("express");
 const userRouter = express.Router();
 const zod = require("zod");
 const { User } = require("../models/user.js");
+const { Bin } = require("../models/bin.js");
 const jwt = require("jsonwebtoken");
 const { JWT_SECRET, URL } = require("../config.js");
 const { authMiddleware } = require("../middlewares/userAuth.js");
@@ -66,7 +67,6 @@ userRouter.post("/signup", async (req, res) => {
   const token = jwt.sign(
     {
       userId,
-      type,
     },
     JWT_SECRET
   );
@@ -127,6 +127,19 @@ userRouter.put("/", authMiddleware, async (req, res) => {
   res.json({
     message: "Updated successfully",
   });
+});
+
+userRouter.get("/dustbins", authMiddleware, async (req, res) => {
+  try {
+    // Find all dustbins associated with the current user
+    const userId = req.userId;
+    const dustbins = await Bin.find({ user: userId });
+
+    res.status(200).json({ dustbins });
+  } catch (error) {
+    console.error("Error fetching user's dustbins:", error);
+    res.status(500).json({ message: "Error fetching user's dustbins" });
+  }
 });
 
 module.exports = userRouter;

@@ -15,6 +15,10 @@ const requirementSchema = mongoose.Schema({
       ref: "User",
     },
   ],
+  org: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
 const Requirement = mongoose.model("requirement", requirementSchema);

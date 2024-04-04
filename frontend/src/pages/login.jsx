@@ -7,6 +7,9 @@ import axios from "axios";
 import { useState } from "react";
 
 export function Login() {
+  const [type, setType] = useState("individual");
+  const [asUser, setForUser] = useState(false);
+  const [asOrganization, setForOrganization] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -131,6 +134,46 @@ export function Login() {
             <form action="#" method="POST" className="mt-8">
               <div className="space-y-5">
                 <div>
+                  {/* Checkbox for For Your Home */}
+                  <div className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      id="asUser"
+                      checked={asUser}
+                      onChange={(e) => {
+                        setForUser(e.target.checked);
+                        setForOrganization(false);
+                        setType("individual");
+                      }}
+                    />
+                    <label
+                      htmlFor="forHome"
+                      className="text-base font-medium text-gray-900"
+                    >
+                      As a User
+                    </label>
+                  </div>
+                  {/* Checkbox for For Business & Organizations */}
+                  <div className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      id="asOrganization"
+                      checked={asOrganization}
+                      onChange={(e) => {
+                        setForUser(false);
+                        setForOrganization(e.target.checked);
+                        setType("organisation");
+                      }}
+                    />
+                    <label
+                      htmlFor="forBusiness"
+                      className="text-base font-medium text-gray-900"
+                    >
+                      As Organization
+                    </label>
+                  </div>
+                </div>
+                <div>
                   <label
                     htmlFor=""
                     className="text-base font-medium text-gray-900"
@@ -191,10 +234,14 @@ export function Login() {
                         }
                       );
                       localStorage.setItem("token", response.data.token);
-                      navigate("/fulldashboard"); // Use navigate for navigation
+                      if (asOrganization) {
+                        navigate("/dashboard"); // Redirect to /dashboard for organizations
+                      } else {
+                        navigate("/fulldashboard"); // Redirect to /fulldashboard for individual users
+                      }
                     }}
                   >
-                    Login <ArrowRight className="ml-2" size={16} />
+                    Sign In <ArrowRight className="ml-2" size={16} />
                   </button>
                 </div>
               </div>

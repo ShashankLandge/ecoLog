@@ -250,7 +250,11 @@ export function Landing() {
                         }
                       );
                       localStorage.setItem("token", response.data.token);
-                      navigate("/dashboard");
+                      if (asOrganization) {
+                        navigate("/dashboard"); // Redirect to /dashboard for organizations
+                      } else {
+                        navigate("/fulldashboard"); // Redirect to /fulldashboard for individual users
+                      }
                     }}
                   >
                     Create Account <ArrowRight className="ml-2" size={16} />

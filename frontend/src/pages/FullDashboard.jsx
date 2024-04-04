@@ -4,6 +4,8 @@ import { Doughnut } from "react-chartjs-2";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from "recharts";
 
 import { Chart as ChartJS } from "chart.js/auto";
+import { UserBin } from "@/components/UserBin";
+import { DustbinPopover } from "@/components/DustbinPopover";
 
 export const FullDashboard = () => {
   return (
@@ -227,6 +229,8 @@ const WasteStats = () => {
           <div>Recycled Waste: {user.recycled}</div>
           <div>Environment Contribution: {environmentContribution}</div>
           <div>Earnings: {user.earnings}</div>
+          <DustbinPopover></DustbinPopover>
+          <UserBin></UserBin>
         </>
       )}
     </div>

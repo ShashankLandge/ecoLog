@@ -49,6 +49,15 @@ const userSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  type: {
+    type: String,
+  },
+  dustbin: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Bin",
+    },
+  ],
 });
 
 // Create a model from the schema
