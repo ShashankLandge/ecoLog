@@ -10,6 +10,8 @@ export function Landing() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [type, setType] = useState("individual");
+  const [asUser, setForUser] = useState(false);
+  const [asOrganization, setForOrganization] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -131,6 +133,46 @@ export function Landing() {
             </p>
             <form action="#" method="POST" className="mt-8">
               <div className="space-y-5">
+                <div>
+                  {/* Checkbox for For Your Home */}
+                  <div className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      id="asUser"
+                      checked={asUser}
+                      onChange={(e) => {
+                        setForUser(e.target.checked);
+                        setForOrganization(false);
+                        setType("individual");
+                      }}
+                    />
+                    <label
+                      htmlFor="forHome"
+                      className="text-base font-medium text-gray-900"
+                    >
+                      As a User
+                    </label>
+                  </div>
+                  {/* Checkbox for For Business & Organizations */}
+                  <div className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      id="asOrganization"
+                      checked={asOrganization}
+                      onChange={(e) => {
+                        setForUser(false);
+                        setForOrganization(e.target.checked);
+                        setType("organisation");
+                      }}
+                    />
+                    <label
+                      htmlFor="forBusiness"
+                      className="text-base font-medium text-gray-900"
+                    >
+                      As Organization
+                    </label>
+                  </div>
+                </div>
                 <div>
                   <label
                     htmlFor="name"
