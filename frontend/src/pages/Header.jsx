@@ -1,7 +1,15 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-
+import { useState } from "react";
 export function Header() {
+
+  
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+    
   return (
     <header className="shadow sticky z-50 top-0">
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
@@ -32,7 +40,7 @@ export function Header() {
             id="mobile-menu-2"
           >
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-              <li>
+              <li className=' mt-2'>
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
@@ -43,7 +51,7 @@ export function Header() {
                   Home
                 </NavLink>
               </li>
-              <li>
+              <li className=' mt-2'>
                 <NavLink
                   to="/fulldashboard"
                   className={({ isActive }) =>
@@ -55,7 +63,7 @@ export function Header() {
                 </NavLink>
               </li>
 
-              <li>
+              <li className=' mt-2'>
                 <NavLink
                   to="/market"
                   className={({ isActive }) =>
@@ -66,7 +74,7 @@ export function Header() {
                   Marketplace
                 </NavLink>
               </li>
-              <li>
+              <li className=' mt-2'>
                 <NavLink
                   to="/events"
                   className={({ isActive }) =>
@@ -78,7 +86,7 @@ export function Header() {
                 </NavLink>
               </li>
 
-              <li>
+              <li className=' mt-2'>
                 <NavLink
                   to="/learnmore"
                   className={({ isActive }) =>
@@ -89,6 +97,50 @@ export function Header() {
                   Learn More
                 </NavLink>
               </li>
+              <li >
+                                 <nav className="bg-white   ">
+                                    {/* Other navbar content */}
+                              
+                                    <div className="relative inline-block text-left  ">
+                                      <button
+                                        type="button"
+                                        className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700    shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
+                                        id="menu-button"
+                                        aria-expanded="true"
+                                        aria-haspopup="true"
+                                        
+                                        // onMouseEnter={setIsDropdownOpen(true)}
+                                        // onFocus={toggleDropdown}
+                                        onClick={toggleDropdown}
+                                      >
+                                        <div className='text-base font-semibold '>Others</div>
+                                        
+                                        <svg className="-mr-1 ml-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                          <path
+                                            fillRule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clipRule="evenodd"
+                                          />
+                                        </svg>
+                                      </button>
+                              
+                                      {isDropdownOpen && (
+                                        <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
+                                          <div className="py-1" role="none">
+                                            <NavLink to="/apply-for-job" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem">
+                                              Apply for Job
+                                            </NavLink>
+                                            <NavLink to="/apply-for-smart-bin" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem">
+                                              Apply for Smart Bin
+                                            </NavLink>
+                                          </div>
+                                        </div>
+                                      )}
+                                    </div>
+                                  </nav>
+
+                </li>
+                           
             </ul>
           </div>
         </div>

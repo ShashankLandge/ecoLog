@@ -10,6 +10,7 @@ import { Landing } from "./pages/Landing";
 import { Header } from "./pages/Header";
 import { FullDashboard } from "./pages/FullDashboard";
 import { Login } from "./pages/login";
+import Footer from "./pages/Footer";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           />
           <Route path="/market" element={<Market />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
