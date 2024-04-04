@@ -170,6 +170,7 @@ export const Market = () => {
               >
                 <TableCell>{requirement.volume}</TableCell>
                 <TableCell>{requirement.type}</TableCell>
+                <TableCell>{}</TableCell>
                 <TableCell className="text-right">
                   <button
                     className="bg-lightgreen text-black px-4 py-2 rounded shadow hover:bg-slategray transition-colors duration-300"

@@ -15,8 +15,12 @@ const organisationSchema = mongoose.Schema({
     required: true,
     minLength: 6,
   },
-  requirements: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "requirement",
-  },
+  requirements: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "requirement",
+    },
+  ],
 });
+
+export { organisationSchema };

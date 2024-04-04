@@ -66,6 +66,7 @@ userRouter.post("/signup", async (req, res) => {
   const token = jwt.sign(
     {
       userId,
+      type,
     },
     JWT_SECRET
   );
