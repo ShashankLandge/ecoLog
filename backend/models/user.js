@@ -34,6 +34,14 @@ const userSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  earnings: {
+    type: Number,
+    default: 0,
+  },
+  recycled: {
+    type: Number,
+    default: 0,
+  },
 });
 
 // Create a model from the schema

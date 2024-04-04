@@ -32,6 +32,7 @@ requirementRouter.get("/bulk", async (req, res) => {
     requirements: requirements.map((requirement) => ({
       type: requirement.type,
       volume: requirement.volume,
+      _id: requirement._id,
     })),
   });
 });
@@ -58,20 +59,28 @@ requirementRouter.put("/sell", authMiddleware, async (req, res) => {
 
     // Check if the user has exactly enough waste to fulfill the requirement
     if (requirement.type === "ewaste" && user.eWaste >= requirement.volume) {
+      user.earnings += requirement.volume;
+      user.recycled += requirement.volume;
       user.eWaste -= requirement.volume;
       requirement.volume = 0; // Set requirement volume to 0
       message = "Waste sold";
+      user.earnings += 10;
     } else if (
       requirement.type === "drywaste" &&
       user.dryWaste >= requirement.volume
     ) {
+      user.earnings += requirement.volume;
+      user.recycled += requirement.volume;
       user.dryWaste -= requirement.volume;
       requirement.volume = 0; // Set requirement volume to 0
       message = "Waste sold";
+      user.earnings += 10;
     } else if (
       requirement.type === "wetwaste" &&
       user.wetWaste >= requirement.volume
     ) {
+      user.earnings += requirement.volume;
+      user.recycled += requirement.volume;
       user.wetWaste -= requirement.volume; // Subtract requirement volume from user's waste
       requirement.volume = 0; // Set requirement volume to 0
       message = "Waste sold";
@@ -83,14 +92,19 @@ requirementRouter.put("/sell", authMiddleware, async (req, res) => {
       user.eWaste < requirement.volume &&
       user.eWaste > 0
     ) {
+      user.earnings += user.eWaste;
+      user.recycled += user.eWaste;
       requirement.volume -= user.eWaste;
       user.eWaste = 0;
       message = "Partial waste sold";
+      user.earnings += 10;
     } else if (
       requirement.type === "drywaste" &&
       user.dryWaste < requirement.volume &&
       user.dryWaste > 0
     ) {
+      user.earnings += user.dryWaste;
+      user.recycled += user.dryWaste;
       requirement.volume -= user.dryWaste;
       user.dryWaste = 0;
       message = "Partial waste sold";
@@ -99,6 +113,8 @@ requirementRouter.put("/sell", authMiddleware, async (req, res) => {
       user.wetWaste < requirement.volume &&
       user.wetWaste > 0
     ) {
+      user.earnings += user.wetWaste;
+      user.recycled += user.wetWaste;
       requirement.volume -= user.wetWaste;
       user.wetWaste = 0;
       message = "Partial waste sold";

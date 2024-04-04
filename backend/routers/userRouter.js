@@ -20,10 +20,21 @@ const updateBody = zod.object({
   username: zod.string().optional(),
 });
 
-userRouter.get("/hello", (req, res) => {
-  res.json({
-    msg: "Helloworld",
+userRouter.get("/getinfo", authMiddleware, async (req, res) => {
+  const userId = req.userId;
+
+  const user = await User.findOne({
+    _id: userId,
   });
+
+  if (!user) {
+    res.json({
+      msg: "User not found",
+    });
+  } else {
+    console.log(user);
+    res.json(user);
+  }
 });
 
 userRouter.post("/signup", async (req, res) => {
