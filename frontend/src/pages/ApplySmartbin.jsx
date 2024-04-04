@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import bgsmartbins from '../assets/bgimage/bgsmartbins.jpg'
 const ApplySmartbin = () => {
   const [fullName, setFullName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -38,8 +38,8 @@ const ApplySmartbin = () => {
 
   if (formSubmitted) {
     return (
-      <div className="bg-cover bg-center h-screen flex items-center justify-center bg-gray-100" style={{ backgroundImage: `url('your-background-image.jpg')` }}>
-        <div className="max-w-md w-full p-4 text-center">
+      <div className="bg-cover h-screen flex items-center justify-center bg-white" style={{ backgroundImage: `url(${bgsmartbins})` }}>
+        <div className="max-w-md w-full p-4 text-center bg-slate-50 border-4 border-black">
           <h2 className="text-2xl font-semibold text-center mb-6">Hurray!! Order Placed</h2>
         </div>
       </div>
@@ -47,13 +47,13 @@ const ApplySmartbin = () => {
   }
 
   return (
-    <div className="bg-cover bg-center h-screen flex items-center justify-center bg-gray-100" style={{ backgroundImage: `url('your-background-image.jpg')` }}>
+    <div className="bg-cover bg-center  flex items-center justify-center bg-gray-100" style={{ backgroundImage: `url(${bgsmartbins} )` }}>
       <div className="max-w-md w-full p-4">
-        <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-md">
+        <form onSubmit={handleSubmit} className="bg-white bg-opacity-40 p-8 pt-0 mt-0  rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold text-center mb-6">Apply for Smart Bin</h2>
 
-          <div className="mb-4">
-            <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
+          <div className="mb-1">
+            <label htmlFor="fullName" className="block text-lg font-bold text-black ">
               Full Name
             </label>
             <input
@@ -66,8 +66,8 @@ const ApplySmartbin = () => {
             />
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700">
+          <div className="mb-1">
+            <label htmlFor="phoneNumber" className="block text-lg font-bold text-black ">
               Phone Number
             </label>
             <input
@@ -80,8 +80,8 @@ const ApplySmartbin = () => {
             />
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="address" className="block text-sm font-medium text-gray-700">
+          <div className="mb-1">
+            <label htmlFor="address" className="block text-lg font-bold text-black ">
               Address
             </label>
             <textarea
@@ -94,8 +94,8 @@ const ApplySmartbin = () => {
             />
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="binSize" className="block text-sm font-medium text-gray-700">
+          <div className="mb-1">
+            <label htmlFor="binSize" className="block text-lg font-bold text-black ">
               Select Smart Bin Size
             </label>
             <select
@@ -112,8 +112,8 @@ const ApplySmartbin = () => {
             </select>
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="price" className="block text-sm font-medium text-gray-700">
+          <div className="mb-1">
+            <label htmlFor="price" className="block text-lg font-bold text-black ">
               Price
             </label>
             <input
@@ -125,8 +125,8 @@ const ApplySmartbin = () => {
             />
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="paymentMethod" className="block text-sm font-medium text-gray-700">
+          <div className="mb-1">
+            <label htmlFor="paymentMethod" className="block text-lg font-bold text-black ">
               Payment Method
             </label>
             <input

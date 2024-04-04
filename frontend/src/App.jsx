@@ -27,6 +27,8 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/apply-for-job" element = {<ApplyJob />} />
+          <Route path="/apply-for-smart-bin" element = {<ApplySmartbin />} />
           <Route
             path="/fulldashboard"
             element={<FullDashboard></FullDashboard>}

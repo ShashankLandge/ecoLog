@@ -59,24 +59,25 @@ const Footer = () => {
 
         <div>
           <h3 className="mb-4 text-red-900  font-bold  text-xl">Connect</h3>
-          <div className=' font-medium pb-8 '>Call us:- 9999999999</div>
+          <div className=' font-medium pb-3 '>Call us at :- 9999999999</div>
+          <div className=' font-medium pb-8 '>Mail us at :- ecologsolutions@gmail.com </div>
           <div className="flex space-x-4 justify-center">
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-green-600  } ">
-               <img src="src\assets\sociallogo\facebook.png" alt="" class='w-5/6' />
+               <img src="src\assets\sociallogo\facebook.png" alt="" class='w-3/4' />
                {/* <SocialIcon href="www.github.com" /> */}
               {/* <i className="fab fa-facebook"></i> */}
             </a>
             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-green-600">
             {/* <SocialIcon href="www.instagram.com" /> */}
-              <img src="src\assets\sociallogo\instagram.png" alt="" className='w-5/6' />
+              <img src="src\assets\sociallogo\instagram.png" alt="" className='w-3/4' />
               {/* <i className="fab fa-instagram"></i> */}
             </a>
             <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-green-600">
-              <img src="src\assets\sociallogo\social.png" alt="" className='w-5/6'  />
+              <img src="src\assets\sociallogo\social.png" alt="" className='w-3/4'  />
               {/* <i className="fab fa-twitter"></i> */}
             </a>
             <a href="https://www.discord.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-green-600">
-              <img src="src\assets\sociallogo\twitter.png" alt="" className='w-5/6 '  />
+              <img src="src\assets\sociallogo\twitter.png" alt="" className='w-3/4 '  />
               {/* <i className="fab fa-discord"></i> */}
             </a>
           </div>
