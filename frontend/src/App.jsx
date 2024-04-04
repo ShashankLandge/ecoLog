@@ -11,11 +11,15 @@ import { Header } from "./pages/Header";
 import { FullDashboard } from "./pages/FullDashboard";
 import { Login } from "./pages/login";
 import Footer from "./pages/Footer";
+import ApplyJob from "./pages/ApplyJob";
+import ApplySmartbin from "./pages/ApplySmartbin";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+      {/* <ApplyJob /> */}
+      {/* <ApplySmartbin /> */}
         <Header></Header>
         <Routes>
           <Route path="/signup" element={<Signup />} />
