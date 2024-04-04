@@ -41,6 +41,7 @@ wasteRouter.post("/input", authMiddleware, async (req, res) => {
     } else {
       user.wetWaste += volume;
     }
+    user.total += volume;
 
     await user.save();
 

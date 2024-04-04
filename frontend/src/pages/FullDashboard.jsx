@@ -72,13 +72,74 @@ const WasteGraph = () => {
   );
 };
 
+// const WastePieChart = () => {
+//   // Prepare data for the pie chart
+//   const [user, setUser] = useState(null);
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const result = await axios.get("http://localhost:3000/user/getinfo", {
+//           headers: {
+//             authorization: localStorage.getItem("token"),
+//           },
+//         });
+//         setUser(result.data);
+//       } catch (error) {
+//         console.error("Error fetching data:", error);
+//       }
+//     };
+
+//     fetchData();
+//   }, []); // Empty dependency array ensures that this effect runs only once after initial render
+
+//   const wasteTypeData = {
+//     labels: ["Biodegradable", "Non-Biodegradable"],
+//     datasets: [
+//       {
+//         data: [user.recycled, user.total - user.recycled], // Example data
+//         backgroundColor: ["#4caf50", "#f44336"],
+//       },
+//     ],
+//   };
+
+//   return (
+//     <div>
+//       <h2 className="text-xl font-bold mb-2">Waste by Type</h2>
+//       <Doughnut data={wasteTypeData} />
+//     </div>
+//   );
+// };
+
 const WastePieChart = () => {
-  // Prepare data for the pie chart
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await axios.get("http://localhost:3000/user/getinfo", {
+          headers: {
+            authorization: localStorage.getItem("token"),
+          },
+        });
+        setUser(result.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []); // Empty dependency array ensures that this effect runs only once after initial render
+
+  if (!user) {
+    return null; // Render nothing if user data is not yet fetched
+  }
+
   const wasteTypeData = {
     labels: ["Biodegradable", "Non-Biodegradable"],
     datasets: [
       {
-        data: [50, 50], // Example data
+        data: [user.recycled, user.total - user.recycled], // Example data
         backgroundColor: ["#4caf50", "#f44336"],
       },
     ],
