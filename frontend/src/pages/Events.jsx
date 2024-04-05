@@ -24,7 +24,7 @@ export default function Events() {
                 <a className="group block w-full" href="#">
                   <img
                     className="mb-5 block w-full rounded-lg"
-                    src="https://plus.unsplash.com/premium_photo-1663852297654-56d979cf72d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YmxvZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+                    src="https://gauvinsgreen.com/wp-content/uploads/2023/01/5.1-770x428.png"
                     alt=""
                   />
                   <span className="mb-2 block text-gray-500">Apr 20, 2024</span>
@@ -40,7 +40,7 @@ export default function Events() {
                 <a className="group mb-8 md:flex" href="#">
                   <img
                     className="h-40 w-48 rounded-lg"
-                    src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                    src="https://www.cityofbowie.org/ImageRepository/Document?documentId=18955"
                     alt=""
                   />
                   <div className=" md:ml-6 md:mt-0">
@@ -53,7 +53,7 @@ export default function Events() {
                 <a className="group mb-8 md:flex" href="#">
                   <img
                     className="h-40 w-48 rounded-lg"
-                    src="https://images.unsplash.com/photo-1591228127791-8e2eaef098d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                    src="https://unhabitatmyanmar.org/wp-content/uploads/2023/06/IMG_E6238-scaled.jpg"
                     alt=""
                   />
                   <div className="my-4 pt-2 md:ml-6 md:mt-0">
@@ -66,7 +66,7 @@ export default function Events() {
                 <a className="group mb-8 md:flex" href="#">
                   <img
                     className="h-40 w-48 rounded-lg"
-                    src="https://images.unsplash.com/photo-1634128221889-82ed6efebfc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                    src="https://apicms.thestar.com.my/uploads/images/2023/06/18/2130271.jpg"
                     alt=""
                   />
                   <div className="my-4 pt-2 md:ml-6 md:mt-0">

@@ -43,11 +43,10 @@ export default function HeroSection() {
             
             </div>
             <h1 className="mt-8 text-3xl font-bold tracking-tight text-black md:text-4xl lg:text-6xl">
-              People who care about your growth
+            Transforming Waste into Wealth:
             </h1>
             <p className="mt-8 text-lg text-gray-700">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur modi blanditiis
-              dolores quasi eaque explicabo!
+            Revolutionizing Waste Management for a Sustainable Future
             </p>
             <form action="" className="mt-8 flex items-start space-x-2">
               <div>
@@ -72,15 +71,15 @@ export default function HeroSection() {
         {/* //!first   */}
         <div className="relative h-[400px] w-[300px] rounded-md">
       <img
-        src="https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+        src="https://5.imimg.com/data5/SELLER/Default/2021/10/OQ/OK/TF/76772506/smart-garbage-bin-device.png"
         alt="AirMax Pro"
         className="z-0 h-full w-full rounded-md object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
       <div className="absolute bottom-4 left-4 text-left">
-        <h1 className="text-lg font-semibold text-white">Delba</h1>
+        <h1 className="text-lg font-semibold text-white">Garbage pickup for Home </h1>
         <p className="mt-2 text-sm text-gray-300">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, debitis?
+          Residential Recycling is available in many areas where we offer garbage pickup.
         </p>
         <button className="mt-2 inline-flex cursor-pointer items-center text-sm font-semibold text-white">
           View Profile &rarr;
@@ -90,15 +89,15 @@ export default function HeroSection() {
     {/* //! second  */}
     <div className="relative h-[400px] w-[300px] rounded-md">
       <img
-        src="https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+        src="https://static.vecteezy.com/system/resources/previews/005/920/847/original/smart-bin-rgb-color-icon-using-modern-technologies-to-reduce-level-of-environmental-pollution-development-of-modern-technologies-isolated-illustration-simple-filled-line-drawing-vector.jpg"
         alt="AirMax Pro"
         className="z-0 h-full w-full rounded-md object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
       <div className="absolute bottom-4 left-4 text-left">
-        <h1 className="text-lg font-semibold text-white">Delba</h1>
+        <h1 className="text-lg font-semibold text-white">Business Waste</h1>
         <p className="mt-2 text-sm text-gray-300">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, debitis?
+          Our Commercial Waste Collection service provides your business with a range of dumpsters and service schedules to meet your needs. 
         </p>
         <button className="mt-2 inline-flex cursor-pointer items-center text-sm font-semibold text-white">
           View Profile &rarr;
@@ -108,15 +107,15 @@ export default function HeroSection() {
     {/* //! third  */}
     <div className="relative h-[400px] w-[300px] rounded-md">
       <img
-        src="https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+        src="https://vikalp.io/wp-content/uploads/2023/10/standalone.png"
         alt="AirMax Pro"
         className="z-0 h-full w-full rounded-md object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
       <div className="absolute bottom-4 left-4 text-left">
-        <h1 className="text-lg font-semibold text-white">Delba</h1>
+        <h1 className="text-lg font-semibold text-white">Smart bins</h1>
         <p className="mt-2 text-sm text-gray-300">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, debitis?
+           one stop home to home solution for garbage waste.
         </p>
         <button className="mt-2 inline-flex cursor-pointer items-center text-sm font-semibold text-white">
           View Profile &rarr;
@@ -126,7 +125,7 @@ export default function HeroSection() {
       </div>
       {/* //! Dustbins  */}
       {/* Features Section */}
-      
+      <div className='pt-9  text-5xl text-black font-bold  flex justify-center items-center h-40 '> <p>We Provide</p></div>
       <div className="mx-auto my-32 max-w-7xl px-2 lg:px-8">
         <div className="grid grid-cols-1 gap-y-8 text-center sm:grid-cols-2 sm:gap-12 lg:grid-cols-4">
           <div>
@@ -146,10 +145,10 @@ export default function HeroSection() {
                 />
               </svg>
             </div>
-            <h3 className="mt-8 text-lg font-semibold text-black">Better Planet</h3>
+            <h3 className="mt-8 text-lg font-semibold text-black">Better and safe Planet</h3>
             <p className="mt-4 text-sm text-gray-600">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
-              officia consequat duis enim velit mollit.
+            Recycling
+Waste Connections is proud to serve residents and business owners as your dedicated recycling partner in your community and in communities throughout the country.
             </p>
           </div>
           <div>
@@ -171,8 +170,7 @@ export default function HeroSection() {
             </div>
             <h3 className="mt-8 text-lg font-semibold text-black">Smart bins</h3>
             <p className="mt-4 text-sm text-gray-600">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
-              officia consequat duis enim velit mollit.
+            Smart bins leverage sensors and Internet of Things (IoT) technology to monitor waste fill levels in real-time, optimizing collection routes and reducing unnecessary pickups. This efficient management reduces overflow, decreases collection costs, and promotes sustainable waste practices for cleaner and smarter cities.
             </p>
           </div>
           <div>
@@ -194,8 +192,7 @@ export default function HeroSection() {
             </div>
             <h3 className="mt-8 text-lg font-semibold text-black">Job Creation</h3>
             <p className="mt-4 text-sm text-gray-600">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
-              officia consequat duis enim velit mollit.
+            We have numerous opportunities for individuals who want to work in a growth industry with outstanding benefits.
             </p>
           </div>
           <div>
@@ -215,10 +212,9 @@ export default function HeroSection() {
                 />
               </svg>
             </div>
-            <h3 className="mt-8 text-lg font-semibold text-black">Filter Blocks</h3>
+            <h3 className="mt-8 text-lg font-semibold text-black">Market place</h3>
             <p className="mt-4 text-sm text-gray-600">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
-              officia consequat duis enim velit mollit.
+              Easiest way for waste consumers to meet their requirements through waste producers .
             </p>
           </div>
         </div>
