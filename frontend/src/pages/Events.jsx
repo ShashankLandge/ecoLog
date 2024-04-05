@@ -1,22 +1,6 @@
 'use client'
 
 import React from 'react'
-import { Menu, X } from 'lucide-react'
-
-const menuItems = [
-  {
-    name: 'Home',
-    href: '#',
-  },
-  {
-    name: 'About',
-    href: '#',
-  },
-  {
-    name: 'Contact',
-    href: '#',
-  },
-]
 
 export default function Events() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
@@ -43,14 +27,12 @@ export default function Events() {
                     src="https://plus.unsplash.com/premium_photo-1663852297654-56d979cf72d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YmxvZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
                     alt=""
                   />
-                  <span className="mb-5 block text-gray-500">Jul 20, 2023</span>
-                  <h4 className="mb-5 text-3xl font-semibold text-gray-900">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  <span className="mb-2 block text-gray-500">Apr 20, 2024</span>
+                  <h4 className="mb-3 text-3xl font-semibold text-gray-900">
+                  E-Waste Collection Event :   <p className='text-slate-500 text-base pt-2'>Location :-  Katraj Pune Maharashtra</p>
                   </h4>
                   <p className="max-w-xl text-lg text-gray-500">
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
-                    officia consequat duis enim velit mollit xercitation veniam consequat sunt
-                    nostrud amet.
+                    Its an competition open for everybody, with amazing price pool winner gets up to 10,000 Rupees.
                   </p>
                 </a>
               </div>
@@ -61,10 +43,10 @@ export default function Events() {
                     src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
                     alt=""
                   />
-                  <div className="my-4 pt-2 md:ml-6 md:mt-0">
-                    <span className="mb-2 block text-gray-500">Jul 20, 2022</span>
+                  <div className=" md:ml-6 md:mt-0">
+                    <span className="mb-2 block text-gray-500">Apr 29, 2024</span>
                     <h4 className="text-xl font-semibold text-gray-900">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Upcycling Workshops: <p className='text-base text-gray-700'>Participants can learn how to repurpose waste materials</p> <p className='text-slate-500 text-base pt-2'>Location:- Swar Gate Pune</p>
                     </h4>
                   </div>
                 </a>
@@ -75,9 +57,9 @@ export default function Events() {
                     alt=""
                   />
                   <div className="my-4 pt-2 md:ml-6 md:mt-0">
-                    <span className="mb-2 block text-gray-500">Jul 20, 2022</span>
+                    <span className="mb-2 block text-gray-500">May 5, 2024</span>
                     <h4 className="text-xl font-semibold text-gray-900">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Waste Cleanup Campaigns: <p className='text-base text-gray-700'>Events aimed at cleaning up litter and waste from public spaces such as parks, beaches, and streets.</p> <p  className='text-slate-500 text-base pt-2'>Location:- Vadgaon Budruk Pune</p>
                     </h4>
                   </div>
                 </a>
@@ -88,9 +70,9 @@ export default function Events() {
                     alt=""
                   />
                   <div className="my-4 pt-2 md:ml-6 md:mt-0">
-                    <span className="mb-2 block text-gray-500">Jul 20, 2022</span>
+                    <span className="mb-2 block text-gray-500">May 28, 2022</span>
                     <h4 className="text-xl font-semibold text-gray-900">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Recycling Drives:  <p className='text-base text-gray-700'>Members can drop off recyclable materials such as paper, plastic, glass, and metal for proper recycling.</p>  <p  className='text-slate-500 text-base pt-2'>Location :- Khau gali Pune</p>
                     </h4>
                   </div>
                 </a>
