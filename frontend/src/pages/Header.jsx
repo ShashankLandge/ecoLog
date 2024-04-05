@@ -69,9 +69,9 @@ export function Header() {
               <li className=" mt-2">
                 <NavLink
                   to={
-                    localStorage.getItem("type") == "user"
-                      ? "/fulldashboard"
-                      : "/dashboard"
+                    localStorage.getItem("type") === "organisation"
+                      ? "/dashboard"
+                      : "/fulldashboard"
                   }
                   className={({ isActive }) =>
                     ` ${isActive ? "text-orange-700" : "text-gray-700"}

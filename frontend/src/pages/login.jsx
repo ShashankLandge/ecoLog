@@ -238,7 +238,7 @@ export function Login() {
                         localStorage.setItem("type", "organisation");
                         navigate("/dashboard"); // Redirect to /dashboard for organizations
                       } else {
-                        localStorage.setItem("type", "organisation");
+                        localStorage.setItem("type", "user");
                         navigate("/fulldashboard"); // Redirect to /fulldashboard for individual users
                       }
                     }}

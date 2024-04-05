@@ -9,7 +9,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import { LineChart, Line, CartesianGrid, XAxis, YAxis } from "recharts";
+import {
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+} from "recharts";
 import { Wasteinput } from "@/components/Wasteinput";
 import { Requirementinput } from "@/components/Requirementinput";
 
@@ -147,8 +154,18 @@ export const Dashboard = () => {
               >
                 <Line type="monotone" dataKey="volume" stroke="#8884d8" />
                 <CartesianGrid stroke="#ccc" />
-                <XAxis dataKey="date" />
+                <XAxis
+                  dataKey="date"
+                  tickFormatter={(date) => {
+                    const formattedDate = new Date(date);
+                    return `${formattedDate.getDate()} ${formattedDate.toLocaleString(
+                      "default",
+                      { month: "short" }
+                    )}`;
+                  }}
+                />
                 <YAxis />
+                <Tooltip />
               </LineChart>
             )}
           </CardContent>

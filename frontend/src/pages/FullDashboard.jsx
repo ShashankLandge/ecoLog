@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Doughnut } from "react-chartjs-2";
-import { LineChart, Line, CartesianGrid, XAxis, YAxis } from "recharts";
+import {
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+} from "recharts";
 
 import { Chart as ChartJS } from "chart.js/auto";
 import { UserBin } from "@/components/UserBin";
@@ -55,6 +62,44 @@ const WasteGraph = () => {
     fetchData();
   }, []); // Empty dependency array ensures that this effect runs only once after initial render
 
+  // return (
+  //   <div>
+  //     {response && (
+  //       <LineChart
+  //         width={600}
+  //         height={300}
+  //         data={response}
+  //         margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
+  //       >
+  //         <Line type="monotone" dataKey="volume" stroke="#8884d8" />
+  //         <CartesianGrid stroke="#ccc" />
+  //         <XAxis dataKey="date" />
+  //         <YAxis />
+  //       </LineChart>
+  //     )}
+  //   </div>
+  // );
+  // return (
+  //   <div>
+  //     {response && (
+  //       <LineChart
+  //         width={600}
+  //         height={300}
+  //         data={response}
+  //         margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
+  //       >
+  //         <Line type="monotone" dataKey="volume" stroke="#8884d8" />
+  //         <CartesianGrid stroke="#ccc" />
+  //         <XAxis
+  //           dataKey="date"
+  //           tickFormatter={(date) => new Date(date).toLocaleDateString()} // Format date as string
+  //         />
+  //         <YAxis />
+  //         <Tooltip />
+  //       </LineChart>
+  //     )}
+  //   </div>
+  // );
   return (
     <div>
       {response && (
@@ -66,8 +111,18 @@ const WasteGraph = () => {
         >
           <Line type="monotone" dataKey="volume" stroke="#8884d8" />
           <CartesianGrid stroke="#ccc" />
-          <XAxis dataKey="date" />
+          <XAxis
+            dataKey="date"
+            tickFormatter={(date) => {
+              const formattedDate = new Date(date);
+              return `${formattedDate.getDate()} ${formattedDate.toLocaleString(
+                "default",
+                { month: "short" }
+              )}`;
+            }}
+          />
           <YAxis />
+          <Tooltip />
         </LineChart>
       )}
     </div>

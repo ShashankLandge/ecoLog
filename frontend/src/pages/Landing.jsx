@@ -9,7 +9,7 @@ export function Landing() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [type, setType] = useState("individual");
+  const [type, setType] = useState("");
   const [asUser, setForUser] = useState(false);
   const [asOrganization, setForOrganization] = useState(false);
   const navigate = useNavigate();
