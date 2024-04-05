@@ -235,8 +235,10 @@ export function Login() {
                       );
                       localStorage.setItem("token", response.data.token);
                       if (asOrganization) {
+                        localStorage.setItem("type", "organisation");
                         navigate("/dashboard"); // Redirect to /dashboard for organizations
                       } else {
+                        localStorage.setItem("type", "organisation");
                         navigate("/fulldashboard"); // Redirect to /fulldashboard for individual users
                       }
                     }}

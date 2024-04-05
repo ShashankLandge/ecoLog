@@ -9,15 +9,24 @@ const requirementSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  user: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
+  user: {
+    type: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    default: [],
+  },
   org: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
+  },
+  orgName: {
+    type: String,
+  },
+  ppv: {
+    type: Number,
   },
 });
 
